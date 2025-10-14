@@ -1,0 +1,11 @@
+{
+  "domain": "zyxel_poe",
+  "name": "Zyxel PoE Switch",
+  "version": "1.2.0",
+  "documentation": "https://github.com/rmappleby/Zyxel-PoE",
+  "requirements": ["beautifulsoup4==4.7.1", "aiohttp"],
+  "dependencies": [],
+  "codeowners": ["@rmappleby"],
+  "config_flow": true
+}
+
