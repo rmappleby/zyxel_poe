@@ -41,7 +41,7 @@ Encapsulates communication with the Zyxel switch via its web interface
 - `ZyxelPoeData` – class that handles state, authentication and queries to one switch
 - `async_update()` – fetches details of all PoE ports (status, power draw, limits)
 - `change_state(port, state)` – enables/disables PoE on a given port
-3. `*switch.py*` (PoE control entities)
+3. *`switch.py`* (PoE control entities)
 Defines entities representing each PoE port’s on/off state
 - Switch entities are registered under the device associated with that host.
 - `ZyxelPoESwitch` (extends SwitchEntity)
