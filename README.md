@@ -25,7 +25,7 @@ Instead we can drive the web interface programmatically to achieve a reasonable 
 configuration data the integration needs
 2. Home Assistant then loads *`__init__.py`* and calls its setup routine to store connection details and call switch and sensor 
 platforms to set themselves up, before collecting the initial cache of state information from the switch (via *`zyxel_api.py`*)
-3. *`zyxel_api.py`* authenticates with the switch and polls and/or updates port states
+3. *`zyxel_api.py`* authenticates with the switch and updates port states or refreshes the state cache from the switch
 4. Switch entities communicate with *`zyxel_api.py`* to control PoE state, and trigger an update to the cache
 5. Sensor entities read metrics from the cached data
 6. Home Assistant periodically schedules an update to the cache
