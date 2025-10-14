@@ -54,6 +54,12 @@ Defines sensors for per-port attributes.
 - `ZyxelPoESensor` (extends SensorEntity)
   - Exposes attributes like current power draw (W), max power (W), or port status.
   - Uses the same `ZyxelPoeData` data cache as switches.
+## Testing
+Seems to work successfully on:
+- Home Assistant Container, Core 2025.10.2, Frontend 20251001.2
+- Zyxel GS1900v1 running firmware V2.70(AAHM.3) dated 07/26/2022
+- Zyxel GS1900v2 running firmware V2.80(ABTP.0) dated 10/16/2023
+
 ## Acknowledgements
 [Convenience script for managing PoE on Zyxel GS1900 switches](https://github.com/jonbulica99/zyxel-poe-manager)
 
