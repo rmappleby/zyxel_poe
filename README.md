@@ -1,4 +1,4 @@
-# Zyxel-PoE
+# zyxel_poe
 Xyxel make a variety of ethernet switches, many with with 802.3 Power over Ethernet (PoE) support. For some
 of the ranges they integrate the management of the PoE into the switches SNMP implementation, which makes 
 management from Home Assistant (HA) quite straightforward. However, switches from their less expensive ranges 
