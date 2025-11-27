@@ -30,11 +30,12 @@ async def async_setup_entry(hass, entry):
     # Store the object for platform files
     hass.data.setdefault(DOMAIN, {})[host] = poe_data
 
-    # Forward setup to switch and sensor platforms
-    for platform in ["switch", "sensor"]:
-        hass.async_create_task(
-            hass.config_entries.async_forward_entry_setups(entry, [platform])
-        )
+    # ------------------------------------------------------------
+    # FIX: await async_forward_entry_setups instead of creating tasks
+    # ------------------------------------------------------------
+    await hass.config_entries.async_forward_entry_setups(
+        entry,
+        ["switch", "sensor"],
+    )
 
     return True
-
