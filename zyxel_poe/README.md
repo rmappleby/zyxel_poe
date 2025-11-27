@@ -1,20 +1,22 @@
 # Zyxel-PoE
-This is a custom integration for Home Assistant that exposes the Power Over Ethernet capabilities of Zyxel 
-GS1900 switches into Home Assistant.
-The Zyxel GS1900 series switches have PoE variants supporting PoE and PoE+. Each port can be enabled/disabled 
-and the power usage monitored by way of the devices web interface. Sadly Zyxel considers these to be low-end 
-switches, and doesn't allow management of the PoE functionality via SNMP.
-Instead we can drive the web interface programmatically to achieve a reasonable level of integration.
+Xyxel make a variety of ethernet switches, many with with 802.3 Power over Ethernet (PoE) support. For some
+of the ranges they integrate the management of the PoE into the switches SNMP implementation, which makes 
+management from Home Assistant (HA) quite straightforward. However, switches from their less expensive ranges 
+only allow management of the PoE support via the switches Web Interface, which is more problematic.
+
+This custom integration for HA exposes the PoE capabilities of those less expensive switches into 
+HA by programmatically driving the switches web interfaces. It has been tested with the Zyxel GS1900 v1 and v2, 
+and should work with gs1200 series switches too. 
 ## Features
 - Supports multiple switches
 - Creates one device per physical Zyxel switch
 - Discovers and creates a switch entity for each PoE port
 - Discovers and creates sensor entities (one for each PoE attribute) for each PoE port
-- Assigns unique IDs to all entities allowing GUI management
-- Groups switch and sensor entities by device in the Home Assistant GUI
+- Assigns unique IDs to all entities allowing management in the HA GUI
+- Groups switch and sensor entities by device in the HA GUI
 - Fully configurable by the Home Assistant GUI using the config flow — no YAML needed
 - Entity names based on each switches FQDN, falls back to IPv4 address otherwise
-- Supports both v1 and v2 devices
+- Tested on both gs1900 v1 and v2 devices
 ## How to install
 - Copy all the files into **custom_components/zyxel_poe/**
 - Restart Home Assistant
