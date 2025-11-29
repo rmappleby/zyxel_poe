@@ -1,10 +1,11 @@
 {
   "domain": "zyxel_poe",
-  "name": "Zyxel PoE Switch",
+  "name": "Zyxel PoE",
   "version": "1.2.0",
   "integration_type": "hub",
   "iot_class": "local_polling",
-  "documentation": "https://github.com/rmappleby/Zyxel-PoE",
+  "documentation": "https://github.com/rmappleby/zyxel_poe",
+  "issue_tracker": "https://github.com/rmappleby/zyxel_poe/issues",
   "requirements": ["beautifulsoup4==4.7.1", "aiohttp"],
   "dependencies": [],
   "codeowners": ["@rmappleby"],

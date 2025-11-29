@@ -1,4 +1,8 @@
 # zyxel_poe
+
+[![Open zyxel_poe in the Home Assistant Community Store (HACS).](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=rmappleby&repository=zyxel_poe&category=integration)
+
+
 Xyxel make a variety of ethernet switches, many with with 802.3 Power over Ethernet (PoE) support. For some
 of the ranges they integrate the management of the PoE into the switches SNMP implementation, which makes 
 management from Home Assistant (HA) quite straightforward. However, switches from their less expensive ranges 
@@ -17,11 +21,31 @@ and should work with gs1200 series switches too.
 - Fully configurable by the Home Assistant GUI using the config flow — no YAML needed
 - Entity names based on each switches FQDN, falls back to IPv4 address otherwise
 - Tested on both gs1900 v1 and v2 devices
-## How to install
-- Copy all the files into **custom_components/zyxel_poe/**
-- Restart Home Assistant
-- Go to *Settings → Devices & Services → Add Integration → Zyxel PoE Switch*
-- Enter the hostname (or IP address) of the switch, and a valid administration userid and password for its web interface
+## Installation
+Prerequisites:
+
+- The switches web interfaces must be resolvable from your home assistant instance
+- Administrator credentials (for each switch) that the integration can use
+
+### Install via HACS (recommended)
+
+1. Install HACS
+2. Click the blue HACS button above
+3. Click Download and confirm
+4. Restart HA
+5. Go to *Settings → Devices & Services → Add Integration → Zyxel PoE Switch*
+6. Enter the hostname (or IP address) of the switch, and a valid administration userid and password for its web interface
+
+### Install manually
+
+1. SSH into your HA instance
+2. `git clone https://github.com/rmappleby/zyxel_poe`
+3. Navigate to `zyxel_poe/custom_components`
+4. Move the directory `zyxel_poe` to your HA instance's `custom_components` directory
+5. Restart your HA instance
+6. Go to *Settings → Devices & Services → Add Integration → Zyxel PoE Switch*
+7. Enter the hostname (or IP address) of the switch, and a valid administration userid and password for its web interface
+
 ## Overall operation
 1. User adds switch via Home Assistant Config Flow (GUI), which uses *`config_flow.py`* and *`manifest.json`* to collect the 
 configuration data the integration needs
@@ -57,7 +81,7 @@ Defines sensors for per-port attributes.
   - Exposes attributes like current power draw (W), max power (W), or port status.
   - Uses the same `ZyxelPoeData` data cache as switches.
 ## Testing
-Seems to work successfully on:
+Tested successfully on:
 - Home Assistant Container, Core 2025.10.2, Frontend 20251001.2
 - Zyxel GS1900-24HPv1 running the latest firmware (V2.70(AAHM.3) dated 07/26/2022)
 - Zyxel GS1900-24HPv2 running the latest firmware (V2.80(ABTP.0) dated 10/16/2023)
