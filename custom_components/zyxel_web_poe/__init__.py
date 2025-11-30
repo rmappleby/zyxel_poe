@@ -8,7 +8,7 @@ from .zyxel_api import ZyxelPoeData
 _LOGGER = logging.getLogger(__name__)
 DEFAULT_SCAN_INTERVAL = timedelta(minutes=1)
 
-DOMAIN = "zyxel_poe"
+DOMAIN = "zyxel_web_poe"
 DATA_KEY = "zyxel_poe_devices"
 
 async def async_setup(hass, config):

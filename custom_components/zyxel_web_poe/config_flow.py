@@ -15,7 +15,7 @@ DATA_SCHEMA = vol.Schema({
     vol.Required(CONF_PASSWORD): str,
 })
 
-class ZyxelPoeConfigFlow(config_entries.ConfigFlow, domain="zyxel_poe"):
+class ZyxelPoeConfigFlow(config_entries.ConfigFlow, domain="zyxel_web_poe"):
     """Handle a config flow for Zyxel PoE Switch."""
 
     VERSION = 1
